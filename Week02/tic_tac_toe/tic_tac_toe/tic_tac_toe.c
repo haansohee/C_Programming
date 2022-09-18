@@ -22,121 +22,143 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#define x 3
+#define y 3  // 3X3 크기의 보드
 
-void init(char board[][3]);
-int get_move(int order, char board[][3]);
-void disp_board(char board[][3]);
+// 보드 그려주는 함수
+void draw_board(char board[x][y])
+{
+    // 보드 그리기...
+    for (int i = 0; i < x; i++)
+    {
+        printf("%c |%c |%c \n", board[i][0], board[i][1], board[i][2]);
+        printf("---------\n");
+    }
+    
+    printf("\n");
+}
 
-//void init()  // 보드 초기화.
-//{
-//    for (x = 0; x < 3; x++)
-//    {
-//        for (y = 0; y < 3; y++)
-//        {
-//            board[x][y] = ' ';
-//        }
-//    }
-//}
-
-//void input()
-//{
-//    // 사용자로부터 위치를 받아서 보드에 표시.
-//    for (k = 0; k < 9; k++)
-//    {
-//        printf("(x,y) 좌표:");
-//        scanf("%d%d", &x, &y);
-//
-//        // 상대방이 놓은 곳에 다시 놓는 것을 방지하는 코드
-//        if(board[x][y] == 'X' || board[x][y] == 'O')
-//        {
-//            printf("이미 놓은 자리입니다!\n");
-//            continue;
-//        }
-//    }
-//}
+// (2) 보드를 분석하여서 게임이 종료되었는지를 검사하는 함수를 추가한다.
+char get_winner(char board[x][y]) // 사용자 우승 여부 함수
+{
+    for (int i = 0; i < 3; i++)  // 행 빙고 검사
+    {
+        
+        if (board[i][0] == 'X' && board[i][1] == 'X' && board[i][2] == 'X')
+        {
+            return 'X';
+        }
+    }
+    
+    for (int i = 0; i < 3; i++)  // 열 빙고 검사
+    {
+        if (board[0][i] == 'X' && board[1][i] == 'X' && board[2][i] == 'X')
+        {
+            return 'X';
+        }
+    }
+        
+    // 대각선 빙고 검사
+    if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X')
+    {
+        return 'X';
+    }
+    
+    if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
+    {
+        return 'X';
+    }
+    
+    return ' ';
+}
 
 int main(void)
 {
-    char board[3][3];  // 크기가 3 x 3인 보드. 행과 열의 크기가 2인 배열 선언.
-    int quit = 0;  // 0으로 초기값 설정.
+    int input_x, input_y;  // 사용자에게 입력받는 좌표를 저장하는 변수.
+    int count = 0;
+    int random_x = 0;  // 랜덤으로 생성된 컴퓨터가 놓을 좌표를 저장하는 변수.
+    int random_y = 0;
     
-    init(board);  // 보드 초기화.
+    char board[x][y];  // 보드
+    char user = 'X';  // 플레이어 캐릭터를 X로 설정해 준다.
+    char computer = 'O';  // 컴퓨터는 O
+    char check;
     
-    while(quit)
+    // 보드를 초기화.
+    for (int i = 0; i < x; i++)
     {
-        disp_board(board);
-        quit = get_move(0, board);
-        disp_board(board);
-        quit = get_move(1, board);
-        
-        if (quit == 0)
+        for (int j = 0; j < y; j++)
         {
-            break;
+            board[i][j] = ' ';
         }
-//        // 사용자로부터 위치를 받아서 보드에 표시.
-//        input();
-//
-////        if (현재 경기자가 'x'이면 )
-////            board[x][y] = 'x'
-////        else
-////            board[x][y] =  'o'
     }
-    return 0;
-}
-
-void init(char board[][3])
-{
-    int x, y;
     
-    for (x = 0; x < 3; x++)
+    do
+    {
+        // 첫 시작은 임의로 사용자로 지정해 주었다.
+        // 사용자로부터 좌표 x,y를 입력받고 보드를 출력한다.
+        printf("사용자의 캐릭터는 'X'입니다. 3x3 크기의 보드입니다. (x, y) 좌표를 입력하세요. ");
+        scanf("%d, %d", &input_x, &input_y);
+        
+        if ((input_x > 3 || input_x < 1) || (input_y > 3 || input_y < 1))
         {
-            for (y = 0; y < 3; y++)
+            printf("1~3 사이의 숫자를 입력하세요. \n");
+            continue;
+        }
+        
+        input_x -= 1;  // 만약, 사용자가 1을 입력하였다면 배열의 0번째이므로...
+        input_y -= 1;
+        
+        //(1) 코드를 실행하면, 상대방이 놓은 곳에 다시 놓을 수 있다. 이것을 방지하는 코드를 추가한다.
+        if (board[input_x][input_y] != ' ')
+        {
+            printf("이미 놓은 자리입니다. 다시 선택하여 주세요. \n");
+            continue;
+        }
+        
+        printf("사용자가 놓은 자리 : %d, %d \n", input_x + 1, input_y + 1);
+        
+        board[input_x][input_y] = user;  // 사용자가 입력한 좌표에 사용자 캐릭터 그리기.
+        draw_board(board);  // 보드 그려주기
+        
+        check = get_winner(board);  // 사용자가 이겼는지 검사
+        
+        if (check == 'X')
+        {
+            printf("사용자 승 \n");
+            break;  // 이김 -> do-while문 (프로그램) 종료
+        }
+        
+        // (3) 컴퓨터가 자동으로 다음 수를 결정하도록 프로그램을 변경한다.
+        // 컴퓨터 차례
+        printf("컴퓨터('O')의 차례입니다. \n");
+        
+        do
+        {
+            random_x = (rand() % 3) + 1;
+            random_y = (rand() % 3) + 1;
+            
+            random_x -= 1;
+            random_y -= 1;
+            
+            //(1) 코드를 실행하면, 상대방이 놓은 곳에 다시 놓을 수 있다. 이것을 방지하는 코드를 추가한다.
+            if (board[random_x][random_y] != ' ')
             {
-                board[x][y] = ' ';
+                continue;
             }
-        }
-}
+            
+            printf("컴퓨터가 놓은 좌표 : (%d, %d) \n", (random_x + 1), (random_y + 1));
+            break;
+        } while(1);
+        
+        board[random_x][random_y] = computer;
+        draw_board(board);  // 보드 그리기
 
-int get_move(int order, char board[3][3])
-{
-    int x, y, done = 0;
-    
-    while(done != 1)
-    {
-        printf("(x, y) 좌표 (종료: -1, -1): ");
-        scanf("%d, %d", &x, &y);
+        // (2) 보드를 분석하여서 게임이 종료되었는지를 검사하는 함수를 추가한다.
+        count++;  // while문이 4번 반복하면 종료
         
-        if (x == -1 && y == -1)
-        {
-            return 1;
-        }
-        
-        else
-        {
-            printf("잘못된 위치입니다. 제대로 입력하세요. \n");
-        }
-    }
-    
-    if (order == 0)
-    {
-        board[x][y] = 'X';
-    }
-    else
-    {
-        board[x][y] = 'O';
-    }
+    } while(count <= 3);
     
     return 0;
-}
-
-void disp_board(char board[3][3])
-{
-    int i;
-    
-    for (i = 0; i < 3; i++)
-    {
-        printf("---|---|---\n");
-        printf(" %c | %c | %c \n", board[i][0], board[i][1], board[i][2]);
-        printf("---|---|---\n");
-    }
 }
