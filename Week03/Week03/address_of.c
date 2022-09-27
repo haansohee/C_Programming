@@ -15,7 +15,7 @@ int main(void) {
     
     // 변수 i, c, f의 주소와 값을 하나씩 출력한다.
     printf("i의 주소 : %u i의 값 : %d \n", &i, i);
-    printf("c의 주소 : %u  c의 값 : %c \n", &c, c);
+    printf("c의 주소 : %u c의 값 : %c \n", &c, c);
     printf("f의 주소 : %u f의 값 : %.1f \n", &f, f);
     
     return 0;

@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F52B4A2F28D616610059EE05 /* tic_tac_toe.c in Sources */ = {isa = PBXBuildFile; fileRef = F52B4A2B28D5DB450059EE05 /* tic_tac_toe.c */; };
+		F5EE1C2C28E2D736004C2910 /* p_func.c in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1C2B28E2D736004C2910 /* p_func.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F5CE8A0E28D073700083E9CD /* CopyFiles */ = {
+		F5EE1C1528E2B4A6004C2910 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F52B4A2B28D5DB450059EE05 /* tic_tac_toe.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tic_tac_toe.c; sourceTree = "<group>"; };
-		F5CE8A1028D073700083E9CD /* tic_tac_toe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tic_tac_toe; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EE1C1728E2B4A6004C2910 /* Week04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Week04; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EE1C1A28E2B4A6004C2910 /* swap1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = swap1.c; sourceTree = "<group>"; };
+		F5EE1C2128E2B9B8004C2910 /* swap2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = swap2.c; sourceTree = "<group>"; };
+		F5EE1C2328E2C179004C2910 /* slope.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = slope.c; sourceTree = "<group>"; };
+		F5EE1C2528E2C47C004C2910 /* p_array1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = p_array1.c; sourceTree = "<group>"; };
+		F5EE1C2728E2CA37004C2910 /* p_array2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = p_array2.c; sourceTree = "<group>"; };
+		F5EE1C2928E2D0D9004C2910 /* p_array3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = p_array3.c; sourceTree = "<group>"; };
+		F5EE1C2B28E2D736004C2910 /* p_func.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = p_func.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F5CE8A0D28D073700083E9CD /* Frameworks */ = {
+		F5EE1C1428E2B4A6004C2910 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,101 +44,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F5CE8A0728D073700083E9CD = {
+		F5EE1C0E28E2B4A6004C2910 = {
 			isa = PBXGroup;
 			children = (
-				F5CE8A1228D073700083E9CD /* tic_tac_toe */,
-				F5CE8A1128D073700083E9CD /* Products */,
+				F5EE1C1928E2B4A6004C2910 /* Week04 */,
+				F5EE1C1828E2B4A6004C2910 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F5CE8A1128D073700083E9CD /* Products */ = {
+		F5EE1C1828E2B4A6004C2910 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5CE8A1028D073700083E9CD /* tic_tac_toe */,
+				F5EE1C1728E2B4A6004C2910 /* Week04 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F5CE8A1228D073700083E9CD /* tic_tac_toe */ = {
+		F5EE1C1928E2B4A6004C2910 /* Week04 */ = {
 			isa = PBXGroup;
 			children = (
-				F52B4A2B28D5DB450059EE05 /* tic_tac_toe.c */,
+				F5EE1C1A28E2B4A6004C2910 /* swap1.c */,
+				F5EE1C2128E2B9B8004C2910 /* swap2.c */,
+				F5EE1C2328E2C179004C2910 /* slope.c */,
+				F5EE1C2528E2C47C004C2910 /* p_array1.c */,
+				F5EE1C2728E2CA37004C2910 /* p_array2.c */,
+				F5EE1C2928E2D0D9004C2910 /* p_array3.c */,
+				F5EE1C2B28E2D736004C2910 /* p_func.c */,
 			);
-			path = tic_tac_toe;
+			path = Week04;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5CE8A0F28D073700083E9CD /* tic_tac_toe */ = {
+		F5EE1C1628E2B4A6004C2910 /* Week04 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5CE8A1728D073700083E9CD /* Build configuration list for PBXNativeTarget "tic_tac_toe" */;
+			buildConfigurationList = F5EE1C1E28E2B4A6004C2910 /* Build configuration list for PBXNativeTarget "Week04" */;
 			buildPhases = (
-				F5CE8A0C28D073700083E9CD /* Sources */,
-				F5CE8A0D28D073700083E9CD /* Frameworks */,
-				F5CE8A0E28D073700083E9CD /* CopyFiles */,
+				F5EE1C1328E2B4A6004C2910 /* Sources */,
+				F5EE1C1428E2B4A6004C2910 /* Frameworks */,
+				F5EE1C1528E2B4A6004C2910 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = tic_tac_toe;
-			productName = tic_tac_toe;
-			productReference = F5CE8A1028D073700083E9CD /* tic_tac_toe */;
+			name = Week04;
+			productName = Week04;
+			productReference = F5EE1C1728E2B4A6004C2910 /* Week04 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F5CE8A0828D073700083E9CD /* Project object */ = {
+		F5EE1C0F28E2B4A6004C2910 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					F5CE8A0F28D073700083E9CD = {
-						CreatedOnToolsVersion = 13.4.1;
+					F5EE1C1628E2B4A6004C2910 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = F5CE8A0B28D073700083E9CD /* Build configuration list for PBXProject "tic_tac_toe" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = F5EE1C1228E2B4A6004C2910 /* Build configuration list for PBXProject "Week04" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = F5CE8A0728D073700083E9CD;
-			productRefGroup = F5CE8A1128D073700083E9CD /* Products */;
+			mainGroup = F5EE1C0E28E2B4A6004C2910;
+			productRefGroup = F5EE1C1828E2B4A6004C2910 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5CE8A0F28D073700083E9CD /* tic_tac_toe */,
+				F5EE1C1628E2B4A6004C2910 /* Week04 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F5CE8A0C28D073700083E9CD /* Sources */ = {
+		F5EE1C1328E2B4A6004C2910 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F52B4A2F28D616610059EE05 /* tic_tac_toe.c in Sources */,
+				F5EE1C2C28E2D736004C2910 /* p_func.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F5CE8A1528D073700083E9CD /* Debug */ = {
+		F5EE1C1C28E2B4A6004C2910 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -176,7 +188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -184,13 +196,13 @@
 			};
 			name = Debug;
 		};
-		F5CE8A1628D073700083E9CD /* Release */ = {
+		F5EE1C1D28E2B4A6004C2910 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -228,14 +240,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		F5CE8A1828D073700083E9CD /* Debug */ = {
+		F5EE1C1F28E2B4A6004C2910 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -245,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		F5CE8A1928D073700083E9CD /* Release */ = {
+		F5EE1C2028E2B4A6004C2910 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -258,25 +270,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F5CE8A0B28D073700083E9CD /* Build configuration list for PBXProject "tic_tac_toe" */ = {
+		F5EE1C1228E2B4A6004C2910 /* Build configuration list for PBXProject "Week04" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5CE8A1528D073700083E9CD /* Debug */,
-				F5CE8A1628D073700083E9CD /* Release */,
+				F5EE1C1C28E2B4A6004C2910 /* Debug */,
+				F5EE1C1D28E2B4A6004C2910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5CE8A1728D073700083E9CD /* Build configuration list for PBXNativeTarget "tic_tac_toe" */ = {
+		F5EE1C1E28E2B4A6004C2910 /* Build configuration list for PBXNativeTarget "Week04" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5CE8A1828D073700083E9CD /* Debug */,
-				F5CE8A1928D073700083E9CD /* Release */,
+				F5EE1C1F28E2B4A6004C2910 /* Debug */,
+				F5EE1C2028E2B4A6004C2910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F5CE8A0828D073700083E9CD /* Project object */;
+	rootObject = F5EE1C0F28E2B4A6004C2910 /* Project object */;
 }

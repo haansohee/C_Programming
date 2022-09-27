@@ -1,3 +1,12 @@
+/*****************************************************************
+ *
+ *  본 파일은 C응용프로그래밍 과제를 위해 작성함.
+ *
+ * 작성자 : 한소희
+ * 최초 작성일자 : 2022년 9월 20일 화요일
+ * 변경 이력 : 주석 추가하였음.
+ ********************************************************************/
+
 // tic_tac_toe 게임 프로그램. 2명의 경기자가 보드를 이용하여 번갈아가면서 O와 X를 놓는 게임. 같은 글자가 가로, 세로 혹은 대각선 상에 놓이면 이기게 된다. 보드의 크기는 3 x 3이다.
 // 알고리즘은 다음과 같다.
 
@@ -21,8 +30,8 @@
  
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>  // 표준 입출력 함수 (printf, scanf) 등을 사용하기 위해 포함
+#include <stdlib.h>   // rand() 함수 사용하기 위해 선언
 #define x 3
 #define y 3  // 3X3 크기의 보드
 
@@ -32,7 +41,7 @@ void draw_board(char board[x][y])
     // 보드 그리기...
     for (int i = 0; i < x; i++)
     {
-        printf("%c |%c |%c \n", board[i][0], board[i][1], board[i][2]);
+        printf("%c |%c |%c \n", board[i][0], board[i][1], board[i][2]);  // 보드에 사용자 혹은 컴퓨터가 좌표에 넣은대로 출력
         printf("---------\n");
     }
     
@@ -47,7 +56,7 @@ char get_winner(char board[x][y]) // 사용자 우승 여부 함수
         
         if (board[i][0] == 'X' && board[i][1] == 'X' && board[i][2] == 'X')
         {
-            return 'X';
+            return 'X';  // 한 행 전체가 'X' 즉, 사용자가 넣은 좌표라면 X retrun
         }
     }
     
@@ -83,7 +92,7 @@ int main(void)
     char board[x][y];  // 보드
     char user = 'X';  // 플레이어 캐릭터를 X로 설정해 준다.
     char computer = 'O';  // 컴퓨터는 O
-    char check;
+    char check;  // 승자가 있는지 확인하는 변수.
     
     // 보드를 초기화.
     for (int i = 0; i < x; i++)
