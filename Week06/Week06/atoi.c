@@ -1,0 +1,26 @@
+//
+//  atoi.c
+//  Week06
+//
+//  Created by 한소희 on 2022/10/11.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    char s1[] = "100";
+    char s2[] = "12.93";
+    char buffer['A'];
+    
+    int i;
+    double d;
+    double result;
+    
+    i = atoi(s1);
+    d = atof(s2);
+    result = i + d;
+    
+    sprintf(buffer, "%f", result);
+    printf("연산 결과는 %s입니다. \n", buffer);
+}
